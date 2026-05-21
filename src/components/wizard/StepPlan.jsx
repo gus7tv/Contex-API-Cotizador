@@ -9,8 +9,7 @@ const StepPlan = () => {
 
     return (
         <div>
-            <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-1">{t('plan.titulo')}</h2>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-3">STEP_03 / 04</p>
+            <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-2">{t('plan.titulo')}</h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">
                 {t('plan.instruccion')}
             </p>

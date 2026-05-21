@@ -12,16 +12,16 @@ export const MARCA_FACTOR = {
 
 export const MARCAS_MODELOS = {
     europeo: [
-        { id: 'bmw-serie-3', nombre: 'BMW Serie 3', factor: 1.10 },
+        { id: 'bmw-serie-1', nombre: 'BMW Serie 1', factor: 1.05 },
         { id: 'bmw-m5', nombre: 'BMW M5', factor: 1.35 },
-        { id: 'mercedes-c200', nombre: 'Mercedes C200', factor: 1.10 },
-        { id: 'audi-a4', nombre: 'Audi A4', factor: 1.10 },
+        { id: 'mercedes-clk-amg', nombre: 'Mercedes CLK 55 AMG', factor: 1.25 },
+        { id: 'audi-a4', nombre: 'Audi A4 3.2 FSI', factor: 1.15 },
         { id: 'vw-jetta', nombre: 'Volkswagen Jetta', factor: 1.00 },
     ],
     americano: [
-        { id: 'ford-mustang', nombre: 'Ford Mustang', factor: 1.20 },
+        { id: 'ford-mustang', nombre: 'Ford Mustang Shelby', factor: 1.20 },
         { id: 'ford-fiesta', nombre: 'Ford Fiesta', factor: 1.00 },
-        { id: 'chevrolet-camaro', nombre: 'Chevrolet Camaro', factor: 1.20 },
+        { id: 'chevrolet-camaro', nombre: 'Chevrolet Camaro ZL1', factor: 1.20 },
         { id: 'tesla-model-3', nombre: 'Tesla Model 3', factor: 1.25 },
         { id: 'jeep-cherokee', nombre: 'Jeep Cherokee', factor: 1.10 },
     ],
@@ -126,8 +126,24 @@ export const TODAS_COBERTURAS = [
     'Equipaje y accesorios',
 ];
 
-export const SPLINE_BY_MARCA = {
-    europeo: 'https://prod.spline.design/3lIMKCetDclEKNep/scene.splinecode',
-    americano: 'https://prod.spline.design/k2A41ZcUeCKZpNnB/scene.splinecode',
-    asiatico: 'https://prod.spline.design/O1N5DS4zjXQTuNdt/scene.splinecode',
+// Modelos GLB locales servidos desde /public/models, indexados por id del modelo del catálogo.
+export const MODEL_BY_MODELO = {
+    // Europeos
+    'bmw-serie-1': '/models/bmw_serie_1_2010.glb',
+    'bmw-m5': '/models/2018_bmw_m5.glb',
+    'mercedes-clk-amg': '/models/2003_mercedes-benz_clk_55_amg.glb',
+    'audi-a4': '/models/2005_audi_a4_3.2_fsi_quattro.glb',
+    'vw-jetta': '/models/2019_volkswagen_jetta.glb',
+    // Americanos
+    'ford-mustang': '/models/ford_mustang_shelby_2012.glb',
+    'ford-fiesta': '/models/2008_ford_fiesta.glb',
+    'chevrolet-camaro': '/models/2012_chevrolet_camaro_zl1.glb',
+    'tesla-model-3': '/models/tesla_2018_model_3.glb',
+    'jeep-cherokee': '/models/2019_jeep_cherokee.glb',
+    // Asiáticos
+    'toyota-corolla': '/models/toyota_corolla_2020.glb',
+    'toyota-land-cruiser': '/models/2022_toyota_land_cruiser_300_vx.r.glb',
+    'honda-civic': '/models/honda_civic.glb',
+    'nissan-sentra': '/models/2020_nissan_sentra_sylphy.glb',
+    'mazda-3': '/models/2020_mazda_3_hatchback.glb',
 };

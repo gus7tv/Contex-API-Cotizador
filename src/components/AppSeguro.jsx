@@ -5,12 +5,12 @@ import EmptyState from "./EmptyState";
 import MisCotizaciones from "./MisCotizaciones";
 import DarkModeToggle from "./DarkModeToggle";
 import LanguageToggle from "./LanguageToggle";
-import { SPLINE_BY_MARCA } from "../constants";
+import { MODEL_BY_MODELO } from "../constants";
 import { useT } from "../context/LanguageContext";
 
-const Spline = lazy(() => import('@splinetool/react-spline'));
+const CarViewer = lazy(() => import('./CarViewer'));
 
-const SplineFallback = ({ label }) => (
+const ViewerFallback = ({ label }) => (
     <div
         aria-label={label}
         className="animate-pulse bg-sky-500/5 border border-sky-500/20 rounded-lg w-full h-full min-h-[300px] sm:min-h-[400px] flex items-center justify-center"
@@ -23,8 +23,7 @@ const SplineFallback = ({ label }) => (
 
 const AppSeguro = () => {
     const { datos } = useCotizador();
-    const { marca } = datos;
-    const splineScene = SPLINE_BY_MARCA[marca];
+    const modelUrl = MODEL_BY_MODELO[datos.modelo];
     const t = useT();
 
     const [mostrarMisCotizaciones, setMostrarMisCotizaciones] = useState(false);
@@ -67,12 +66,12 @@ const AppSeguro = () => {
                     <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-sky-500/60 translate-x-px translate-y-px" />
                     <Wizard />
                 </main>
-                <div className="relative rounded-lg overflow-hidden border border-slate-200/50 dark:border-slate-800/50 min-h-[280px] md:min-h-[500px]">
-                    {!splineScene
+                <div className="relative rounded-lg overflow-hidden border border-slate-200/50 dark:border-slate-800/50 min-h-[280px] md:min-h-[500px] bg-slate-100 dark:bg-slate-950 bg-tech-grid">
+                    {!modelUrl
                         ? <EmptyState />
                         : (
-                            <Suspense fallback={<SplineFallback label={t('aria.cargandoSpline')} />}>
-                                <Spline key={splineScene} scene={splineScene} />
+                            <Suspense fallback={<ViewerFallback label={t('aria.cargandoSpline')} />}>
+                                <CarViewer url={modelUrl} />
                             </Suspense>
                         )
                     }

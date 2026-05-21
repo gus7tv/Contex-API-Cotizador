@@ -4,10 +4,10 @@ const ThemeContext = createContext();
 const STORAGE_KEY = 'theme';
 
 function leerInicial() {
-    if (typeof window === 'undefined') return 'light';
+    if (typeof window === 'undefined') return 'dark';
     const guardado = localStorage.getItem(STORAGE_KEY);
     if (guardado === 'dark' || guardado === 'light') return guardado;
-    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'dark';
 }
 
 export const ThemeProvider = ({ children }) => {

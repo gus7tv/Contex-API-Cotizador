@@ -55,18 +55,17 @@ const StepResumen = () => {
 
     return (
         <div>
-            <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-1">{t('resumen.titulo')}</h2>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-5">STEP_04 / 04</p>
+            <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-5">{t('resumen.titulo')}</h2>
 
             <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-md p-4 mb-4 grid grid-cols-1 md:grid-cols-2 gap-x-6">
-                <Item label="MARCA" value={nombre(MARCAS, datos.marca)} />
-                <Item label="MODELO" value={nombreModelo} />
-                <Item label="YEAR" value={datos.year} />
-                <Item label="VALUE" value={`$${Number(datos.valorVehiculo).toLocaleString('en-US')}`} />
-                <Item label="AGE" value={`${datos.edadConductor}`} />
-                <Item label="CITY" value={nombre(CIUDADES, datos.ciudad)} />
-                <Item label="USAGE" value={nombre(USOS, datos.uso)} />
-                <Item label="PLAN" value={nombre(PLANES, datos.plan)} />
+                <Item label={t('resumen.labels.marca')} value={nombre(MARCAS, datos.marca)} />
+                <Item label={t('resumen.labels.modelo')} value={nombreModelo} />
+                <Item label={t('resumen.labels.year')} value={datos.year} />
+                <Item label={t('resumen.labels.valor')} value={`$${Number(datos.valorVehiculo).toLocaleString('en-US')}`} />
+                <Item label={t('resumen.labels.edad')} value={`${datos.edadConductor}`} />
+                <Item label={t('resumen.labels.ciudad')} value={nombre(CIUDADES, datos.ciudad)} />
+                <Item label={t('resumen.labels.uso')} value={nombre(USOS, datos.uso)} />
+                <Item label={t('resumen.labels.plan')} value={nombre(PLANES, datos.plan)} />
             </div>
 
             {cargando && <Spinner />}
@@ -74,7 +73,7 @@ const StepResumen = () => {
             {!cargando && total > 0 && (
                 <>
                     <div className="relative text-center bg-gradient-to-br from-sky-50 to-emerald-50 dark:from-sky-500/10 dark:to-emerald-500/10 border border-emerald-400/50 dark:border-emerald-500/40 rounded-md p-5 mb-4 overflow-hidden">
-                        <span className="absolute top-2 left-2 font-mono text-[9px] tracking-widest text-emerald-600 dark:text-emerald-400">█ QUOTE</span>
+                        <span className="absolute top-2 left-2 font-mono text-[9px] tracking-widest text-emerald-600 dark:text-emerald-400">█ {t('resumen.quoteTag')}</span>
                         <div className="font-mono text-[10px] uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-1 mt-2">{t('resumen.totalAnual')}</div>
                         <div className="font-mono text-3xl sm:text-4xl md:text-5xl font-black text-emerald-600 dark:text-emerald-400 tracking-tight break-all">{resultado}</div>
                         {codigoGuardado && (

@@ -47,13 +47,24 @@ export default {
         elegido: 'Selected',
     },
     empty: {
-        seleccionaMarca: 'Select a make to preview the vehicle',
+        seleccionaMarca: 'Pick a model to preview the vehicle',
     },
     resumen: {
         titulo: 'Summary',
         totalAnual: 'Annual total',
         codigo: 'Code',
         sinCotizaciones: 'You haven\'t saved any quotes yet.',
+        quoteTag: 'QUOTE',
+        labels: {
+            marca: 'MAKE',
+            modelo: 'MODEL',
+            year: 'YEAR',
+            valor: 'VALUE',
+            edad: 'AGE',
+            ciudad: 'CITY',
+            uso: 'USAGE',
+            plan: 'PLAN',
+        },
     },
     toast: {
         guardada: code => `Saved with code ${code}`,

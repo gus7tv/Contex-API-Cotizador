@@ -47,13 +47,24 @@ export default {
         elegido: 'Elegido',
     },
     empty: {
-        seleccionaMarca: 'Selecciona una marca para visualizar el vehículo',
+        seleccionaMarca: 'Selecciona un modelo para visualizar el vehículo',
     },
     resumen: {
         titulo: 'Resumen',
         totalAnual: 'Total anual',
         codigo: 'Código',
         sinCotizaciones: 'Aún no has guardado ninguna cotización.',
+        quoteTag: 'COTIZACIÓN',
+        labels: {
+            marca: 'MARCA',
+            modelo: 'MODELO',
+            year: 'AÑO',
+            valor: 'VALOR',
+            edad: 'EDAD',
+            ciudad: 'CIUDAD',
+            uso: 'USO',
+            plan: 'PLAN',
+        },
     },
     toast: {
         guardada: code => `Guardada con código ${code}`,

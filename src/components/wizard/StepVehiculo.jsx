@@ -14,8 +14,7 @@ const StepVehiculo = () => {
 
     return (
         <div>
-            <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-1">{t('vehiculo.titulo')}</h2>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-5">STEP_01 / 04</p>
+            <h2 className="text-xl font-black text-slate-800 dark:text-slate-100 mb-5">{t('vehiculo.titulo')}</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
                 <div>
