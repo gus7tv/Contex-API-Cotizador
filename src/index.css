@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    /* Grid pattern de fondo, suavísimo en claro y un poco más visible en oscuro */
+    .bg-tech-grid {
+        background-image:
+            linear-gradient(to right, rgb(148 163 184 / 0.18) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(148 163 184 / 0.18) 1px, transparent 1px);
+        background-size: 32px 32px;
+    }
+    .dark .bg-tech-grid {
+        background-image:
+            radial-gradient(ellipse at top, rgb(14 165 233 / 0.10), transparent 60%),
+            linear-gradient(to right, rgb(56 189 248 / 0.06) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(56 189 248 / 0.06) 1px, transparent 1px);
+        background-size: 100% 100%, 32px 32px, 32px 32px;
+    }
+
+    /* Texto con gradiente tech para títulos */
+    .text-gradient-tech {
+        background-image: linear-gradient(90deg, #0ea5e9, #6366f1);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .dark .text-gradient-tech {
+        background-image: linear-gradient(90deg, #38bdf8, #a5b4fc);
+    }
+
+    /* Border resplandeciente sutil para cards selecionadas en oscuro */
+    .ring-tech {
+        box-shadow:
+            0 0 0 1px rgb(14 165 233 / 0.6),
+            0 0 20px rgb(14 165 233 / 0.25);
+    }
+}
